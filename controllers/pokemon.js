@@ -3,18 +3,27 @@ let knex = require('../db/knex.js');
 module.exports = {
 
   main: function(req, res, next) {
-    res.render('pokemon')
+    knex('pokemon')
+    .then((results)=>{
+      res.render('pokemon', {pokemon: results})
+    })
   },
 
   addPokemon: function (req, res) {
-      res.render('newPokemon')
+    knex('pokemon')
+    .insert(req.body)
+    .then(()=>{
+      res.redirect('/');
+    })
   },
 
 
-  // addedPokemon: function (req, res) {
+
+
+  // addPokemon: function (req, res) {
   //   knex('pokemon')
   //   .insert(req.body, '*')
-  //   .then((user)=>{
+  //   .then((pokemondata)=>{
   //     req.session.user = user[0];
   //     req.session.save(()=>{
   //       res.redirect('/')

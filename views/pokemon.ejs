@@ -49,15 +49,12 @@
       </div>
       <h2>Hello!</h2>
 
-      <!-- <form action="/addPokemon" method="get">
-
-      </form> -->
       <button onclick="myFunction()" type="submit">Create a new pokemon!</button>
 
 
     <div id="myDIV" style="display:none;">
       <h4>Enter Pokemon information below:</h4>
-      <form action="/addedPokemon" method="post">
+      <form action="/addPokemon" method="post">
         <input type="string" name="name" placeholder="name">
         <input type="integer" name="trainer_id" placeholder="trainer_id">
         <input type="integer" name="cp" placeholder="cp">
@@ -65,6 +62,18 @@
         <input type="submit">
       </form>
     </div>
+
+    <hr>
+    <h3>Your Pokemon</h3>
+    <%  for (let i = 0;i < pokemon.length; i++) { %>
+    <hr>  
+      <div>
+        <p>Name: <%=pokemon[i].name %></p>
+        <p>Trainer ID: <%=pokemon[i].trainer_id %></p>
+        <p>CP: <%=pokemon[i].cp %></p>
+        <p>In gym: <%=pokemon[i].in_gym %></p>
+      </div>
+      <%  } %>
 
 
       <footer class="pokemon-footer mdl-mega-footer">
@@ -76,11 +85,6 @@
   <script>
 function myFunction() {
     var x = document.getElementById("myDIV");
-    // if (x.style.display === "none") {
-    //     x.style.display = "block";
-    // } else {
-    //     x.style.display = "none";
-    // }
     if (x.style.display === "block") {
         x.style.display = "none";
     } else {

@@ -8,7 +8,5 @@ module.exports = function(app){
 
   app.get('/pokemon', pokemon.main);
 
-  app.get('/addPokemon', pokemon.addPokemon);
-
-  // app.post('/addedPokemon', pokemon.addedPokemon);
+  app.post('/addPokemon', pokemon.addPokemon);
 }
