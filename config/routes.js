@@ -9,4 +9,6 @@ module.exports = function(app){
   app.get('/pokemon', pokemon.main);
 
   app.post('/addPokemon', pokemon.addPokemon);
+
+  app.get('/pokemon/info/:id', pokemon.info)
 }
