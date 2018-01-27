@@ -19,14 +19,14 @@ module.exports = {
 
   info: function (req, res) {
 
-    knex.select('pokemon.id', 'pokemon.name', 'pokemon.cp', 'pokemon.in_gym', 'trainers.name' AS 'trainer_name')
+    knex.select('pokemon.id', 'pokemon.name', 'pokemon.cp', 'pokemon.in_gym', 'trainers.name AS trainer_name')
         .from('pokemon')
         .join('trainers', 'pokemon.trainer_id', 'trainers.id')
         .where('pokemon.id', req.params.id)
         .then((resultData)=>{
           res.render('info', {properties:resultData})
         })
-    })
+    }
 
 
     // knex.select('pokemon.id', 'pokemon.name', 'pokemon.cp', 'pokemon.in_gym', 'trainers.name AS trainer_name')

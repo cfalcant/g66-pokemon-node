@@ -2,6 +2,7 @@
 const index = require("../controllers/index.js");
 const pokemon = require("../controllers/pokemon.js");
 const info = require("../controllers/info.js");
+const trainers = require("../controllers/trainers.js");
 
 module.exports = function(app){
 
@@ -12,4 +13,6 @@ module.exports = function(app){
   app.post('/addPokemon', pokemon.addPokemon);
 
   app.get('/pokemon/info/:id', pokemon.info)
+
+  app.get('/trainers', trainers.main)
 }
