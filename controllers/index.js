@@ -7,6 +7,7 @@ module.exports = {
   // },
 
   main: function(req, res, next) {
+    req.session.user = [];
     res.redirect('/pokemon')
   },
 

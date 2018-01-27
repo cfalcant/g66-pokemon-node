@@ -68,9 +68,8 @@
     <%  for (let i = 0;i < pokemon.length; i++) { %>
     <hr>
       <div>
-        <a href="/pokemon/info/<%pokemon[i].id%>">Name: <%=pokemon[i].name %> </a>
-        <p> Name: <%=pokemon[i].name %></p>
-        <p>Trainer ID: <%=pokemon[i].trainer_id %></p>
+        <a href="/pokemon/info/<%=pokemon[i].id%>">Name: <%=pokemon[i].name %> </a>
+        <p>Trainer ID: <%=pokemon[i].id %></p>
         <p>CP: <%=pokemon[i].cp %></p>
         <p>In gym: <%=pokemon[i].in_gym %></p>
         <a href="">DELETE</a>
