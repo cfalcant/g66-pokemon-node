@@ -26,7 +26,11 @@ module.exports = {
         .then((resultData)=>{
           res.render('info', {properties:resultData})
         })
-    }
+    },
+
+    edit: function (req, res) {
+      res.render('editPokemon')
+    },
 
   }
 
