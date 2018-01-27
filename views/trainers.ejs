@@ -48,21 +48,23 @@
       <div class="app-content pokemon-wear-section">
       </div>
       <h2>Trainers</h2>
-<!--
-      <form action="/addedPokemon" method="post">
-        <input type="string" name="name" placeholder="name">
-        <input type="integer" name="trainer_id" placeholder="trainer_id">
-        <input type="integer" name="cp" placeholder="cp">
-        <input type="boolean" name="in_gym" placeholder="in_gym">
-        <input type="submit">
-      </form> -->
+      <%  for (let i = 0;i < trainers.length; i++) { %>
+        <hr>
+        <div>
+          <a href="/trainers/info/<%=trainers[i].id%>">Trainer Name: <%=trainers[i].name %> </a>
+          <p>Trainer ID:
+            <%=trainers[i].id %>
+          </p>
+        </div>
+        <%  } %>
 
 
 
 
-      <footer class="pokemon-footer mdl-mega-footer">
-        Your slogan.
-      </footer>
+
+          <footer class="pokemon-footer mdl-mega-footer">
+            Your slogan.
+          </footer>
     </div>
   </div>
   <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>

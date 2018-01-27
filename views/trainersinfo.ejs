@@ -47,30 +47,25 @@
     <div class="pokemon-content mdl-layout__content">
       <div class="app-content pokemon-wear-section">
       </div>
-      <% for (let i = 0;i<properties.length; i++) { %>
-        <div>
-          <h1> Pokemon selected: <%=properties[i].name %></h1>
-          <p> ID:
-            <%=properties[i].id %>
-          </p>
-          <p> Trainer Name:
-            <%=properties[i].trainer_name %>
-          </p>
-          <p>Trainer ID:
-            <%=properties[i].trainer_id %>
-          </p>
-          <p>CP:
-            <%=properties[i].cp %>
-          </p>
-          <p>In gym:
-            <%=properties[i].in_gym %>
-          </p>
-        </div>
-        <% } %>
 
-          <footer class="pokemon-footer mdl-mega-footer">
-            Your slogan.
-          </footer>
+    </div>
+
+    <%  for (let i = 0;i < trainer.length; i++) { %>
+      <h5>Trainer selected: <%=trainer[i].name %></h2>
+            <hr>
+            <div>
+          <p>Trainer's pokemon: <%=trainer[i].pokemon_name %></p>
+          </div>
+          <%  } %>
+
+
+
+
+
+
+      <footer class="pokemon-footer mdl-mega-footer">
+        Your slogan.
+      </footer>
     </div>
   </div>
   <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>

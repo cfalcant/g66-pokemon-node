@@ -52,49 +52,48 @@
       <button onclick="myFunction()" type="submit">Create a new pokemon!</button>
 
 
-    <div id="myDIV" style="display:none;">
-      <h4>Enter Pokemon information below:</h4>
-      <form action="/addPokemon" method="post">
-        <input type="string" name="name" placeholder="name">
-        <input type="integer" name="trainer_id" placeholder="trainer_id">
-        <input type="integer" name="cp" placeholder="cp">
-        <input type="boolean" name="in_gym" placeholder="in_gym">
-        <input type="submit">
-      </form>
-    </div>
-
-    <hr>
-    <h3>Your Pokemon</h3>
-    <%  for (let i = 0;i < pokemon.length; i++) { %>
-    <hr>
-      <div>
-        <a href="/pokemon/info/<%=pokemon[i].id%>">Name: <%=pokemon[i].name %> </a>
-        <p>Trainer ID: <%=pokemon[i].id %></p>
-        <p>CP: <%=pokemon[i].cp %></p>
-        <p>In gym: <%=pokemon[i].in_gym %></p>
-        <a href="">DELETE</a>
-        <a href="">EDIT</a>
+      <div id="myDIV" style="display:none;">
+        <h4>Enter Pokemon information below:</h4>
+        <form action="/addPokemon" method="post">
+          <input type="string" name="name" placeholder="name">
+          <input type="integer" name="trainer_id" placeholder="trainer_id">
+          <input type="integer" name="cp" placeholder="cp">
+          <input type="boolean" name="in_gym" placeholder="in_gym">
+          <input type="submit">
+        </form>
       </div>
-      <%  } %>
+
+      <hr>
+      <h3>Your Pokemon</h3>
+      <%  for (let i = 0;i < pokemon.length; i++) { %>
+        <hr>
+        <div>
+          <a href="/pokemon/info/<%=pokemon[i].id%>"><%=pokemon[i].name %> </a>
+
+          </p>
+          <a href="">DELETE</a>
+          <a href="">EDIT</a>
+        </div>
+        <%  } %>
 
 
-      <footer class="pokemon-footer mdl-mega-footer">
-        Your slogan.
-      </footer>
+          <footer class="pokemon-footer mdl-mega-footer">
+            Your slogan.
+          </footer>
     </div>
   </div>
   <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
   <script>
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "block") {
+    function myFunction() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "block") {
         x.style.display = "none";
-    } else {
+      } else {
         x.style.display = "block";
-    }
+      }
 
-}
-</script>
+    }
+  </script>
 
 </body>
 
